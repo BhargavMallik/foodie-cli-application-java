@@ -23,4 +23,8 @@ public class CustomerRepository {
         this.customerList.add(customer);
         return customer;
     }
+
+    public Optional<Customer> findCustomerById(String id){
+         return this.customerList.stream().filter(customer -> customer.getId().equals(id)).findFirst();
+    }
 }
