@@ -3,7 +3,8 @@ package com.bhargav.foodiecliapp.model;
 import java.util.List;
 import java.util.Objects;
 
-public class Order {
+public class Order
+{
     /*
     add the following properties
     --------------------------------------
@@ -30,51 +31,62 @@ public class Order {
     private List<String> dishes;
     private double price;
 
-    public Order() {
-    }
+    public Order()
+    {}
 
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(String id)
+    {
         this.id = id;
     }
 
-    public Customer getCustomer() {
+    public Customer getCustomer()
+    {
         return customer;
     }
 
-    public void setCustomer(Customer customer) {
+    public void setCustomer(Customer customer)
+    {
         this.customer = customer;
     }
 
-    public Restaurant getRestaurant() {
+    public Restaurant getRestaurant()
+    {
         return restaurant;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
+    public void setRestaurant(Restaurant restaurant)
+    {
         this.restaurant = restaurant;
     }
 
-    public List<String> getDishes() {
+    public List<String> getDishes()
+    {
         return dishes;
     }
 
-    public void setDishes(List<String> dishes) {
+    public void setDishes(List<String> dishes)
+    {
         this.dishes = dishes;
     }
 
-    public double getPrice() {
+    public double getPrice()
+    {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(double price)
+    {
         this.price = price;
     }
 
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(Object o)
+    {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
@@ -82,12 +94,14 @@ public class Order {
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hash(id, customer, restaurant, dishes, price);
     }
 
     @Override
-    public String toString() {
+    public String toString()
+    {
         return "Order{" +
                 "id='" + id + '\'' +
                 ", customer=" + customer +

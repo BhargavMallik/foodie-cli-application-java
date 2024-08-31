@@ -14,19 +14,25 @@ public class CsvReader {
     Read the data from CSV files and Create a List of Objects.
      */
 
-    public List<Customer> readCustomersFromCsv(){
+    /*
+    The Below Method is used to read the details of an customer from Customer.csv files
+     */
+    public List<Customer> readCustomersFromCsv()
+    {
 
         String customersCsvFilePath ="E:\\Personal Projects\\foodie-cli-application-java\\data\\customers.csv";
         //Java IO Classes (FileReader, BufferedReader)
 
         List<Customer> customerList = new ArrayList<>();
         String line;
-        try (BufferedReader br = new BufferedReader(new FileReader(customersCsvFilePath))){
+        try (BufferedReader br = new BufferedReader(new FileReader(customersCsvFilePath)))
+        {
 
             String csvSplitBy = ",";
             br.readLine();
 
-            while ( (line = br.readLine()) != null ){
+            while ( (line = br.readLine()) != null )
+            {
                 //C001, Bujji, bujji@gmail.com, bujji023
                 String[] data = line.split(csvSplitBy);
 
@@ -37,7 +43,8 @@ public class CsvReader {
                 customer.setPassword(data[3]);
                 customerList.add(customer);
             }
-        } catch (IOException e){
+        } catch (IOException e)
+        {
             System.out.println("File not foind in the path");
             e.printStackTrace();
         }
