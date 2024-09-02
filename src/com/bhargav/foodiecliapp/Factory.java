@@ -1,8 +1,9 @@
-package com.bhargav.foodiecliapp.util;
+package com.bhargav.foodiecliapp;
 
 import com.bhargav.foodiecliapp.controller.CustomerController;
 import com.bhargav.foodiecliapp.repository.CustomerRepository;
 import com.bhargav.foodiecliapp.service.CustomerServiceImpl;
+import com.bhargav.foodiecliapp.util.CsvReader;
 
 public class Factory
 {
