@@ -1,8 +1,7 @@
 package com.bhargav.foodiecliapp.repository;
 
 import com.bhargav.foodiecliapp.model.Customer;
-import com.bhargav.foodiecliapp.util.CsvReader;
-import com.bhargav.foodiecliapp.util.Factory;
+import com.bhargav.foodiecliapp.Factory;
 
 import java.util.List;
 import java.util.Optional;
