@@ -6,18 +6,28 @@ import com.bhargav.foodiecliapp.service.CustomerServiceImpl;
 
 public class Factory
 {
-    public CustomerRepository getCustomerRepository()
+    public static CsvReader getCsvReader()
     {
-        return new CustomerRepository();
+        return Holder.CSV_READER;
+    }
+    public static CustomerRepository getCustomerRepository() {
+        return Holder.CUSTOMER_REPOSITORY;
     }
 
-    public CustomerServiceImpl getCustomerService()
-    {
-        return new CustomerServiceImpl(getCustomerRepository());
+    public static CustomerServiceImpl getCustomerService() {
+        return Holder.CUSTOMER_SERVICE;
     }
 
-    public CustomerController getCustomerController()
+    public static CustomerController getCustomerController() {
+        return Holder.CUSTOMER_CONTROLLER;
+    }
+
+    private static class Holder
     {
-        return new CustomerController(getCustomerService());
+        private static final CsvReader CSV_READER = new CsvReader();
+
+        private static final CustomerRepository CUSTOMER_REPOSITORY = new CustomerRepository();
+        private static final CustomerServiceImpl CUSTOMER_SERVICE = new CustomerServiceImpl(CUSTOMER_REPOSITORY);
+        private static final CustomerController CUSTOMER_CONTROLLER = new CustomerController(CUSTOMER_SERVICE);
     }
 }
