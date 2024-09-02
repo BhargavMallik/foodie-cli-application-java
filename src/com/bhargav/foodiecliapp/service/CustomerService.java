@@ -23,4 +23,7 @@ public interface CustomerService {
 
     public Customer validateCustomerLogin(String email, String password) throws CustomerNotExistingException;
 
+    public void setCurrentLoggedInCustomer(Customer customer);
+
+    public Customer currentLoggedInCustomer();
 }
