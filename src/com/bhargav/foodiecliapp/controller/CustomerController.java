@@ -46,6 +46,10 @@ public class CustomerController
         return this.customerServiceImpl.currentLoggedInCustomer();
     }
 
+    public Customer updateCustomer(Customer customer) throws CustomerNotExistingException
+    {
+        return this.customerServiceImpl.updateCustomer(customer);
+    }
     public Customer validateCustomerLogin(String email, String password) throws CustomerNotExistingException
     {
         Customer customer = this.customerServiceImpl.validateCustomerLogin(email,password);
