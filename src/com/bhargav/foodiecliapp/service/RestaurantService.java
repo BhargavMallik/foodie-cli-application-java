@@ -17,5 +17,5 @@ public interface RestaurantService
 
     public Restaurant updateRestaurant(Restaurant restaurantToBeUpdated) throws RestaurantNotExistsException;
 
-    public void deleteRestaurant(Restaurant restaurant) throws RestaurantNotExistsException;
+    public void deleteRestaurant(String id) throws RestaurantNotExistsException;
 }

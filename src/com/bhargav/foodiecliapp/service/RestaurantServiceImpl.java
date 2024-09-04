@@ -59,14 +59,14 @@ public class RestaurantServiceImpl implements RestaurantService
     }
 
     @Override
-    public void deleteRestaurant(Restaurant restaurant) throws RestaurantNotExistsException
+    public void deleteRestaurant(String id) throws RestaurantNotExistsException
     {
-        Optional<Restaurant> restaurantOptional = this.restaurantRepository.findRestaurantById(restaurant.getId());
+        Optional<Restaurant> restaurantOptional = this.restaurantRepository.findRestaurantById(id);
 
         if(restaurantOptional.isEmpty())
         {
-            throw new RestaurantNotExistsException("Restaurant Not Exists with this Id : " + restaurant.getId());
+            throw new RestaurantNotExistsException("Restaurant Not Exists with this Id : " + id);
         }
-        this.restaurantRepository.deleteRestaurant(restaurant);
+        this.restaurantRepository.deleteRestaurant(restaurantOptional.get());
     }
 }
