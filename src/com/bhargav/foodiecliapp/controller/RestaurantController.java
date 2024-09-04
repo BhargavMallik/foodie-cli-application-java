@@ -37,9 +37,9 @@ public class RestaurantController
         return this.restaurantService.updateRestaurant(restaurantToBeUpdated);
     }
 
-    public void deleteRestaurant(Restaurant restaurant) throws RestaurantNotExistsException
+    public void deleteRestaurant(String id) throws RestaurantNotExistsException
     {
-        this.restaurantService.deleteRestaurant(restaurant);
+        this.restaurantService.deleteRestaurant(id);
     }
 
 }
