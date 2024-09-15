@@ -1,5 +1,6 @@
 package com.bhargav.foodiecliapp.repository;
 
+import com.bhargav.foodiecliapp.Factory;
 import com.bhargav.foodiecliapp.model.Dish;
 
 import java.util.List;
@@ -7,11 +8,11 @@ import java.util.Optional;
 
 public class DishRepository
 {
-    List<Dish> dishList;
+    private List<Dish> dishList;
 
-    public DishRepository(List<Dish> dishList)
+    public DishRepository()
     {
-        this.dishList = dishList;
+        this.dishList = Factory.getCsvReader().readDishesFromCsv();
     }
 
     public List<Dish> getDishList() {
