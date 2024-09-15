@@ -39,7 +39,7 @@ public class DishRepository
                     dish.setDescription(dishToBeUpdated.getDescription());
 
                     return dish;
-                        })
+                        });
 
         return optionalDish.orElse(null);
     }
