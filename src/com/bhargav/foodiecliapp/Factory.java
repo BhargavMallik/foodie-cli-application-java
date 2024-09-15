@@ -1,10 +1,13 @@
 package com.bhargav.foodiecliapp;
 
 import com.bhargav.foodiecliapp.controller.CustomerController;
+import com.bhargav.foodiecliapp.controller.DishController;
 import com.bhargav.foodiecliapp.controller.RestaurantController;
 import com.bhargav.foodiecliapp.repository.CustomerRepository;
+import com.bhargav.foodiecliapp.repository.DishRepository;
 import com.bhargav.foodiecliapp.repository.RestaurantRepository;
 import com.bhargav.foodiecliapp.service.CustomerServiceImpl;
+import com.bhargav.foodiecliapp.service.DishServiceImpl;
 import com.bhargav.foodiecliapp.service.RestaurantServiceImpl;
 import com.bhargav.foodiecliapp.util.CsvReader;
 
@@ -44,6 +47,21 @@ public class Factory
         return Holder.RESTAURANT_CONTROLLER;
     }
 
+    public static DishRepository getDishRepository()
+    {
+        return Holder.DISH_REPOSITORY;
+    }
+
+    public static DishServiceImpl getDishService()
+    {
+        return Holder.DISH_SERVICE;
+    }
+
+    public static DishController getDishController()
+    {
+        return Holder.DISH_CONTROLLER;
+    }
+
     private static class Holder
     {
         private static final CsvReader CSV_READER = new CsvReader();
@@ -56,5 +74,8 @@ public class Factory
         private static final RestaurantServiceImpl RESTAURANT_SERVICE = new RestaurantServiceImpl(RESTAURANT_REPOSITORY);
         private static final RestaurantController RESTAURANT_CONTROLLER = new RestaurantController(RESTAURANT_SERVICE);;
 
+        private static final DishRepository DISH_REPOSITORY = new DishRepository();
+        private static final DishServiceImpl DISH_SERVICE = new DishServiceImpl(DISH_REPOSITORY);
+        private static final DishController DISH_CONTROLLER = new DishController(DISH_SERVICE);
     }
 }
